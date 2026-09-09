@@ -1,0 +1,20 @@
+---
+layout: base.njk
+title: ""
+---
+<section class="hero">
+  <h1>Your Name</h1>
+  <p class="hero-line">I write research, essays, and short fiction — self-published here, no editor required.</p>
+</section>
+
+<section class="index">
+  <div class="card-grid">
+    {% for post in collections.allWork %}
+    <a class="card" href="{{ post.url }}" style="--card-accent: var({{ post.data.accentVar }})">
+      <p class="card-meta">{{ post.data.section }} · {{ post.data.date | readableDate }}</p>
+      <h2 class="card-title">{{ post.data.title }}</h2>
+      {% if post.data.summary %}<p class="card-summary">{{ post.data.summary }}</p>{% endif %}
+    </a>
+    {% endfor %}
+  </div>
+</section>

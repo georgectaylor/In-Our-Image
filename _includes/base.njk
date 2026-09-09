@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if title %}{{ title }} — {% endif %}Your Name</title>
+  <meta name="description" content="{{ description or 'Research, essays, and short fiction.' }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="skip-link"><a href="#main">Skip to content</a></div>
+  <header class="site-header">
+    <a class="site-name" href="/">Your Name</a>
+    <nav class="site-nav">
+      <a href="/research/">Research</a>
+      <a href="/essays/">Essays</a>
+      <a href="/fiction/">Fiction</a>
+    </nav>
+  </header>
+  <main id="main">
+    {{ content | safe }}
+  </main>
+  <footer class="site-footer">
+    <p>Your Name · <a href="mailto:you@example.com">you@example.com</a></p>
+  </footer>
+</body>
+</html>

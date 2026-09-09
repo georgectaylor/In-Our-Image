@@ -1,0 +1,11 @@
+---
+layout: base.njk
+---
+<article class="post" style="--card-accent: var({{ accentVar }})">
+  <p class="post-meta"><a href="/{{ sectionSlug }}/">{{ section }}</a> · {{ date | readableDate }}</p>
+  <h1 class="post-title">{{ title }}</h1>
+  {% if summary %}<p class="post-summary">{{ summary }}</p>{% endif %}
+  <div class="post-body">
+    {{ content | safe }}
+  </div>
+</article>

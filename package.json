@@ -1,0 +1,12 @@
+{
+  "name": "personal-site",
+  "version": "1.0.0",
+  "description": "Personal site for research, essays, and fiction",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  }
+}

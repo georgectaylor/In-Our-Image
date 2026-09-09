@@ -1,0 +1,42 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# This tells the CMS where to publish. Netlify Identity + Git Gateway
+# (set up in the Netlify dashboard) handles login, so you never touch Git.
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "research"
+    label: "Research"
+    folder: "content/research"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD" }
+      - { label: "Summary", name: "summary", widget: "text", required: false, hint: "One or two sentences shown on the index cards." }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "essays"
+    label: "Essays"
+    folder: "content/essays"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD" }
+      - { label: "Summary", name: "summary", widget: "text", required: false, hint: "One or two sentences shown on the index cards." }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "fiction"
+    label: "Fiction"
+    folder: "content/fiction"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD" }
+      - { label: "Summary", name: "summary", widget: "text", required: false, hint: "One or two sentences shown on the index cards." }
+      - { label: "Body", name: "body", widget: "markdown" }

@@ -1,0 +1,22 @@
+---
+layout: base.njk
+title: Essays
+---
+<section class="section-header" style="--card-accent: var(--accent-essay)">
+  <p class="section-label">Essays</p>
+  <h1>Essays</h1>
+  <p class="section-intro">Shorter, more personal pieces.</p>
+</section>
+<section class="index">
+  <div class="card-grid">
+    {% for post in collections.essays %}
+    <a class="card" href="{{ post.url }}" style="--card-accent: var(--accent-essay)">
+      <p class="card-meta">{{ post.data.date | readableDate }}</p>
+      <h2 class="card-title">{{ post.data.title }}</h2>
+      {% if post.data.summary %}<p class="card-summary">{{ post.data.summary }}</p>{% endif %}
+    </a>
+    {% else %}
+    <p class="empty-note">Nothing published here yet.</p>
+    {% endfor %}
+  </div>
+</section>
